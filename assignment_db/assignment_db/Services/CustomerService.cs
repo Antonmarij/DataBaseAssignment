@@ -27,4 +27,18 @@ public class CustomerService
             Debug.WriteLine(ex.Message);
         }
     }
+
+    public async Task<List<CustomerEntity>> GetAllAsync()
+    {
+        try
+        {
+            List<CustomerEntity> customers = await _context.Customers.ToListAsync();
+            return customers;
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine(ex.Message);
+            return null;
+        }
+    }
 }

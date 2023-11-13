@@ -1,13 +1,10 @@
-﻿using assignment_db.Menus;
+﻿using assignment_db.Services;
 using System.Diagnostics;
 
-namespace assignment_db.Services;
+namespace assignment_db.Menus;
 
-public class MenuService
+public class ProductsMenu
 {
-    
-
-
     public static async Task ShowAsync()
     {
         var exit = false;
@@ -17,10 +14,9 @@ public class MenuService
             do
             {
                 Console.Clear();
-                Console.WriteLine("1. Go To Orders");
-                Console.WriteLine("2. Go To Products");
-                Console.WriteLine("3. Go To Customers");
-                Console.WriteLine("0. Exit");
+                Console.WriteLine("1. Create a Product");
+                Console.WriteLine("2. Show all Products");
+                Console.WriteLine("0. Go Back");
                 Console.Write("Choose an option: ");
                 var option = Console.ReadLine();
 
@@ -29,20 +25,15 @@ public class MenuService
                 switch (option)
                 {
                     case "1":
-                        await OrdersMenu.ShowAsync();
+                        
                         break;
 
                     case "2":
-                        await ProductsMenu.ShowAsync();
-                        break;
-
-                    case "3":
-                        await CustomersMenu.ShowAsync();
+                        
                         break;
 
                     case "0":
-                        exit = true;
-                        Environment.Exit(0);
+                        await MenuService.ShowAsync();
                         break;
 
                     default:
