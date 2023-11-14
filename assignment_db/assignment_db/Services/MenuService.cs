@@ -24,7 +24,7 @@ public class MenuService
                 Console.Write("Choose an option: ");
                 var option = Console.ReadLine();
 
-                Console.Clear();
+
 
                 switch (option)
                 {

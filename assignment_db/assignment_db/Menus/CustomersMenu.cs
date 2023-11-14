@@ -28,8 +28,6 @@ public class CustomersMenu
                 Console.Write("Choose an option: ");
                 var option = Console.ReadLine();
 
-                Console.Clear();
-
                 switch (option)
                 {
                     case "1":
